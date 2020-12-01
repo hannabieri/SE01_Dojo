@@ -1,3 +1,17 @@
+'''
+
+This was my back-to-version-1 attempt of getting the game logic working.
+However
+
+
+
+
+
+'''
+
+
+
+
 # Function to display beaker to user
 def create_beaker(beaker):
 	print("Beaker 1:", beaker[1][0], "|", beaker[1][1], "|", beaker[1][2])
@@ -38,11 +52,6 @@ def check_if_legal(move_from, move_into):
 			if count_empty_units >= 1:
 				return True			
 
-def first_non_zero(move_orig):
-  for index, number in enumerate(move_orig):
-    if number != 0: # or 'if number:'
-      return index
-
 
 def play_game(beaker):
 	create_beaker(beaker)
@@ -56,18 +65,16 @@ def play_game(beaker):
 	move_from = parse_input(user_input_1)
 	move_into = parse_input(user_input_2)
 
-	if check_if_legal(move_from, move_into):
+	if check_if_legal(move_from, move_into) = False:
+		print("\nAi, ai... Unfortunately, that move is not possible! :( \n")
+
+		
+	else:
 		print("Hooray, legal move!")
 		#indexing first spot that is not 0 in move_from:
 		print(first_non_zero(move_from))
 		#print(next(i for i, x in enumerate(move_from) if x!= 0)) # x!= 0 for strict match
-
-
-
 		
-	else:
-		print("\nAi, ai... Unfortunately, that move is not possible! :( \n")
-
 
 
 

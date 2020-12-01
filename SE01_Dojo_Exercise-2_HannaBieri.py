@@ -1,6 +1,14 @@
 '''
-As discussed in the check-in, I got caught up trying to 
 
+Comment:
+
+As discussed in the check-in, I got caught up trying to split the functions into smaller pieces.
+At various stages in this task, there are too many indentation levels and it is too 'hard coded'.
+To approach it in a better way, it would be advisable to try and work with slices! However, unfortunately the time remaining was not enough for me to get that implemented.
+
+Currently, in exercise 2, also just the "legal move"-check works. It reprints the board, but it does not actually execute the new board yet. 
+
+AH SO CLOSE! All i would need to find out now is how to loop thorugh a nested list (beaker) from the back [-1]and then determin the first index which is not 0!! 
 
 '''
 
@@ -21,7 +29,7 @@ def parse_input(user_input):
 # RETURNS the TOP color (eg. 1 or "1") move_from
 def get_top_color(beaker, move_orig):
 	if beaker[move_orig][2] == 2:
-		return 2
+		return (2, )
 	elif beaker[move_orig][2] == 1:
 		return 1
 	#move to middle one if top one empty
@@ -72,13 +80,12 @@ def get_available_space(beaker, move_into):
 
 
 def play_game(beaker):
+
 	display_beaker(beaker)
 	
 	if game_active:
-		#user_input_1 = input("\nEnter the beaker to move liquid from: ")
-		user_input_1 = "3"
-		#user_input_2 = input("Enter the beaker to move liquid into: ")
-		user_input_2 = "1"
+		user_input_1 = "3" #input("\nEnter the beaker to move liquid from: ")
+		user_input_2 = "1" #input("Enter the beaker to move liquid into: ")
 
 		# Calling function for input (sting) into int
 		move_from = parse_input(user_input_1)
@@ -95,20 +102,27 @@ def play_game(beaker):
 			# Check if space available
 			if get_top_color_quantity(beaker, move_from, colour_to_move) <= get_available_space(beaker, move_into):
 			 	print("Space matches!")
-			 	print(units_to_move)
+			 	
+			 	# for sub in beaker:
+			 	# 	for n in [move_from][-1]:
+			 	# 		print(n)
+
+			 	# COMMENT: This is neither complete, nor a good way to solve the problem at hand. 
+
 			 	if (beaker[move_from][2] != 0) and (units_to_move == 1) and (beaker[move_into][1] != 0):
 			 		beaker[move_into][2] = beaker[move_from][2]
 			 		beaker[move_from][2] = 0
+			 		print("blablabal")
+
 			 	elif (beaker[move_from][1] != 0) and (units_to_move == 1) and (beaker[move_into][1] != 0):
 			 		beaker[move_into][2] = beaker[move_from][2]
 			 		beaker[move_from][2] = 0
 
 			display_beaker(beaker)
 
-		# this means beaker is empy
+		# This means beaker is empty
 		elif units_available == 3:
-			pass
-			
+			print("Hooray, legal move!")	
 
 		else:
 			print("\nAi, ai... Unfortunately, that move is not possible! :( \n")
