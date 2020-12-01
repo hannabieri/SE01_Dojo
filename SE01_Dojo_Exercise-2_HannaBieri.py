@@ -29,7 +29,7 @@ def parse_input(user_input):
 # RETURNS the TOP color (eg. 1 or "1") move_from
 def get_top_color(beaker, move_orig):
 	if beaker[move_orig][2] == 2:
-		return (2, )
+		return 2
 	elif beaker[move_orig][2] == 1:
 		return 1
 	#move to middle one if top one empty
