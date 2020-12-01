@@ -1,5 +1,5 @@
 # Beaker starting state, nested list
-beaker = [[], [2, 0, 0], [1, 2, 2], [2, 1, 0]]
+beaker = [[], [1, 0, 0], [2, 1, 2], [2, 1, 0]]
 
 # Function to display beaker to user
 def create_beaker(beaker):
