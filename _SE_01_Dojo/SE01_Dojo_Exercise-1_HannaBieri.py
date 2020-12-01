@@ -16,19 +16,19 @@ def parse_input(user_input):
 def check_if_legal(move_from, move_into):
 		# Figure out how many units are free in the beaker to move into 
 		count_empty_units = beaker[move_into].count(0)
-		print(f"This many units are free: {count_empty_units}")
+		#print(f"This many units are free: {count_empty_units}")
 		
 		# Figure out how many units are occupied in the beaker to move from 
 		count_full_units = beaker[move_from].count(1) + beaker[move_from].count(2)
-		print(f"This many units are occupied: {count_full_units}")
+		#print(f"This many units are occupied: {count_full_units}")
 
 		# If there is more space than has to be moved: True
 		if count_empty_units >= count_full_units:
 			
 			#Figure out if colors (numbers) match by getting index of item on top
 			if beaker[move_into][2-count_empty_units] == beaker[move_from][count_full_units-1]:
-				print(beaker[move_into][2-count_empty_units])
-				print(beaker[move_from][count_full_units-1])
+				#print(beaker[move_into][2-count_empty_units])
+				#print(beaker[move_from][count_full_units-1])
 				# Both checks passed, space and color fit!
 				return True
 
@@ -37,10 +37,10 @@ def check_if_legal(move_from, move_into):
 def play_game(beaker):
 		create_beaker(beaker)
 		
-		#user_input_1 = input("\nEnter the beaker to move liquid from: ")
-		user_input_1 = "1"
-		#user_input_2 = input("Enter the beaker to move liquid into: ")
-		user_input_2 = "3"
+		user_input_1 = input("\nEnter the beaker to move liquid from: ")
+		#user_input_1 = "1"
+		user_input_2 = input("Enter the beaker to move liquid into: ")
+		#user_input_2 = "3"
 
 		# Calling function for input (sting) into int
 		move_from = parse_input(user_input_1)
