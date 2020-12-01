@@ -1,3 +1,11 @@
+'''
+As discussed in the check-in, I got caught up trying to 
+
+
+'''
+
+
+
 # Function to display beaker to user
 def display_beaker(beaker):
 	print("Beaker 1:", beaker[1][0], "|", beaker[1][1], "|", beaker[1][2])
@@ -83,6 +91,7 @@ def play_game(beaker):
 		# Check if the colours match
 		if get_top_color(beaker, move_from) == get_top_color(beaker, move_into):
 			print("Hooray, legal move!")
+
 			# Check if space available
 			if get_top_color_quantity(beaker, move_from, colour_to_move) <= get_available_space(beaker, move_into):
 			 	print("Space matches!")
@@ -117,41 +126,5 @@ play_game(beaker)
 
 
 
-
-
-
-
-
-
-
-		# colour_to_move = get_top_color(beaker, move_from)
-		# # print(f"Colour to move: {colour_to_move}")
-		# # units_to_move = get_top_color_quantity(beaker, move_from, colour_to_move)
-		# # print(f"Units to move: {units_to_move}")
-		# units_available = get_available_space(beaker, move_into)
-		# # print(f"Units available: {units_available}")
-
-
-
-
-
-# def check_if_legal(beaker, move_from, move_into, colour_to_move, units_to_move, units_available):
-# 	# Check from_beaker is not empty
-# 	print(colour_to_move)
-# 	if colour_to_move != 0:
-# 		#Figure out if colors (numbers) match of both beakers by getting the item on top
-# 		pass
-
-# 	# else it is empty, so anything can go in
-# 	else:
-# 		print("Empty one!")
-# 		pass
-
-# # 	# Figure out how many units are occupied in the beaker to move from 
-# # 	count_full_units = beaker[move_from].count(1) + beaker[move_from].count(2)
-
-# # 	#Figure out if colors (numbers) match of both beakers by getting index of item on top
-# # 	if beaker[move_into][2-count_empty_units] == beaker[move_from][count_full_units-1]:
-# # 		pass
 
 
